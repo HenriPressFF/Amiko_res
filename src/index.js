@@ -87,6 +87,6 @@ app.listen(port, async () => {
     -Inicia o servidor Express na porta definida (3000).
     -Exibe uma mensagem "app Running" no console quando o servidor estiver em execução.
     */
-    await mongoose.connect('mongodb+srv://henriquefreimanisde:BRMslahzWexe9P6M@cluster0.1tqagfh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+    await mongoose.connect('link_de_conexão_MongoDB'); //Escreva aqui o link de conexão com seu banco de dados MongoDB
     console.log("app Running")
 }); 
