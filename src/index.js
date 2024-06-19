@@ -21,10 +21,7 @@ app.get('/calls', async (req, res) =>{
     */
     const pacientes = await Patient.find({}, 'name'); // Busca apenas o campo name.
     const calls = pacientes.map(paciente => ({ name: paciente.name })); //faz um "for" para ler todos names chamados e armazena em calls 
-    return res.send({ calls });
-    
-    //const pacientes = await Patient.find()
-    //return res.send(pacientes)
+    return res.send({ calls }); // retorna nomes chamados
 
 });
 
@@ -56,8 +53,7 @@ app.put('/:id',async(req,res)=>{ // parametro id
 
 app.post('/calls', async (req,res)=>{  //rota call
     /*
-    Atualiza um documento Paciente pelo seu ID com os dados fornecidos no corpo da requisição
-     (req.body) e retorna o documento atualizado como resposta. A opção { new: true } faz com que o método retorne o documento atualizado.
+    publica uma nova chamada de um paciente, checa se o numero é válido, salva na nuvem e retorna mensagem status 201 (sucesso)
     */
     const { id, name, hospital } = req.body;
 
